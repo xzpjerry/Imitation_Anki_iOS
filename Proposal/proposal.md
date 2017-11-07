@@ -19,8 +19,12 @@ Currently it has Windows, Mac, Linux, IOS and Android version, although it is a 
 - Original Anki can have multiple decks, which is the database, for this project, I will probably use only one fixed deck.
 - Considering the time we have, I might not allow users to add multiple media files, and they can only study words only.
 
+## Two optional criteria
+- Allow the user to interact with the device camera and/or photos so that they can add images to their note.
+- Play and/or record sounds and add to their note.
+
 ## Imagined UI design
 ![](IMG_1391.jpg)
 
 ## Core Data design
-![](IMG_1392.jpg)
+![](Screen Shot 2017-11-07 at 3.51.07 PM.png)
