@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D73EB2291FB7D25300C50F61 /* performance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73EB2281FB7D25300C50F61 /* performance.swift */; };
+		D73EB22C1FB8F71A00C50F61 /* Card+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73EB22A1FB8F71A00C50F61 /* Card+CoreDataClass.swift */; };
+		D73EB22F1FB9087C00C50F61 /* Study_view_controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73EB22E1FB9087C00C50F61 /* Study_view_controller.swift */; };
 		D76BE8B41FB119D400BA4F13 /* record.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76BE8B31FB119D400BA4F13 /* record.swift */; };
 		D7E4EBFC1FB0DA300025CA67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E4EBFB1FB0DA300025CA67 /* AppDelegate.swift */; };
-		D7E4EBFE1FB0DA300025CA67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E4EBFD1FB0DA300025CA67 /* ViewController.swift */; };
+		D7E4EBFE1FB0DA300025CA67 /* DashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E4EBFD1FB0DA300025CA67 /* DashBoardViewController.swift */; };
 		D7E4EC011FB0DA300025CA67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7E4EBFF1FB0DA300025CA67 /* Main.storyboard */; };
 		D7E4EC041FB0DA300025CA67 /* Final.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D7E4EC021FB0DA300025CA67 /* Final.xcdatamodeld */; };
 		D7E4EC061FB0DA300025CA67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7E4EC051FB0DA300025CA67 /* Assets.xcassets */; };
@@ -18,6 +21,7 @@
 		D7E4EC1F1FB0DA310025CA67 /* FinalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E4EC1E1FB0DA310025CA67 /* FinalUITests.swift */; };
 		D7E4EC2F1FB0DA9D0025CA67 /* words.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7E4EC2E1FB0DA9C0025CA67 /* words.plist */; };
 		D7E4EC331FB0DAD80025CA67 /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E4EC321FB0DAD80025CA67 /* CardService.swift */; };
+		D7FEED501FB6830200F92C44 /* Setting_tableview_controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FEED4F1FB6830200F92C44 /* Setting_tableview_controller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,10 +42,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D73EB2281FB7D25300C50F61 /* performance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = performance.swift; sourceTree = "<group>"; };
+		D73EB22A1FB8F71A00C50F61 /* Card+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D73EB22E1FB9087C00C50F61 /* Study_view_controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Study_view_controller.swift; sourceTree = "<group>"; };
 		D76BE8B31FB119D400BA4F13 /* record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = record.swift; sourceTree = "<group>"; };
 		D7E4EBF81FB0DA300025CA67 /* Final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Final.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E4EBFB1FB0DA300025CA67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D7E4EBFD1FB0DA300025CA67 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D7E4EBFD1FB0DA300025CA67 /* DashBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardViewController.swift; sourceTree = "<group>"; };
 		D7E4EC001FB0DA300025CA67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D7E4EC031FB0DA300025CA67 /* Final.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Final.xcdatamodel; sourceTree = "<group>"; };
 		D7E4EC051FB0DA300025CA67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,6 +62,7 @@
 		D7E4EC201FB0DA310025CA67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7E4EC2E1FB0DA9C0025CA67 /* words.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = words.plist; sourceTree = "<group>"; };
 		D7E4EC321FB0DAD80025CA67 /* CardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardService.swift; sourceTree = "<group>"; };
+		D7FEED4F1FB6830200F92C44 /* Setting_tableview_controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting_tableview_controller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +94,17 @@
 			isa = PBXGroup;
 			children = (
 				D76BE8B31FB119D400BA4F13 /* record.swift */,
+				D73EB22A1FB8F71A00C50F61 /* Card+CoreDataClass.swift */,
+				D73EB2281FB7D25300C50F61 /* performance.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D76BE8B51FB38D8500BA4F13 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		D7E4EBEF1FB0DA300025CA67 = {
@@ -142,7 +159,9 @@
 			isa = PBXGroup;
 			children = (
 				D7E4EBFB1FB0DA300025CA67 /* AppDelegate.swift */,
-				D7E4EBFD1FB0DA300025CA67 /* ViewController.swift */,
+				D7E4EBFD1FB0DA300025CA67 /* DashBoardViewController.swift */,
+				D7FEED4F1FB6830200F92C44 /* Setting_tableview_controller.swift */,
+				D73EB22E1FB9087C00C50F61 /* Study_view_controller.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -171,6 +190,7 @@
 		D7E4EC311FB0DAB80025CA67 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				D76BE8B51FB38D8500BA4F13 /* Extension */,
 				D7E4EC301FB0DAA60025CA67 /* Service */,
 				D7E4EC2C1FB0DA460025CA67 /* Controller */,
 			);
@@ -313,9 +333,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7E4EC041FB0DA300025CA67 /* Final.xcdatamodeld in Sources */,
-				D7E4EBFE1FB0DA300025CA67 /* ViewController.swift in Sources */,
+				D73EB22F1FB9087C00C50F61 /* Study_view_controller.swift in Sources */,
+				D73EB22C1FB8F71A00C50F61 /* Card+CoreDataClass.swift in Sources */,
+				D7E4EBFE1FB0DA300025CA67 /* DashBoardViewController.swift in Sources */,
+				D7FEED501FB6830200F92C44 /* Setting_tableview_controller.swift in Sources */,
 				D7E4EBFC1FB0DA300025CA67 /* AppDelegate.swift in Sources */,
 				D76BE8B41FB119D400BA4F13 /* record.swift in Sources */,
+				D73EB2291FB7D25300C50F61 /* performance.swift in Sources */,
 				D7E4EC331FB0DAD80025CA67 /* CardService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -483,6 +507,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9R46ZZB7A4;
 				INFOPLIST_FILE = Final/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Zhipeng.Final;
@@ -497,6 +522,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9R46ZZB7A4;
 				INFOPLIST_FILE = Final/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Zhipeng.Final;
