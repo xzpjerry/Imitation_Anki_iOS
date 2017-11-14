@@ -10,6 +10,8 @@
 		D73EB2291FB7D25300C50F61 /* performance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73EB2281FB7D25300C50F61 /* performance.swift */; };
 		D73EB22C1FB8F71A00C50F61 /* Card+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73EB22A1FB8F71A00C50F61 /* Card+CoreDataClass.swift */; };
 		D73EB22F1FB9087C00C50F61 /* Study_view_controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73EB22E1FB9087C00C50F61 /* Study_view_controller.swift */; };
+		D73EB2311FBA286700C50F61 /* navi_back_delegate_protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73EB2301FBA286700C50F61 /* navi_back_delegate_protocol.swift */; };
+		D73EB2351FBA433900C50F61 /* cardListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73EB2341FBA433900C50F61 /* cardListTableViewController.swift */; };
 		D76BE8B41FB119D400BA4F13 /* record.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76BE8B31FB119D400BA4F13 /* record.swift */; };
 		D7E4EBFC1FB0DA300025CA67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E4EBFB1FB0DA300025CA67 /* AppDelegate.swift */; };
 		D7E4EBFE1FB0DA300025CA67 /* DashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E4EBFD1FB0DA300025CA67 /* DashBoardViewController.swift */; };
@@ -45,6 +47,8 @@
 		D73EB2281FB7D25300C50F61 /* performance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = performance.swift; sourceTree = "<group>"; };
 		D73EB22A1FB8F71A00C50F61 /* Card+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D73EB22E1FB9087C00C50F61 /* Study_view_controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Study_view_controller.swift; sourceTree = "<group>"; };
+		D73EB2301FBA286700C50F61 /* navi_back_delegate_protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navi_back_delegate_protocol.swift; sourceTree = "<group>"; };
+		D73EB2341FBA433900C50F61 /* cardListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardListTableViewController.swift; sourceTree = "<group>"; };
 		D76BE8B31FB119D400BA4F13 /* record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = record.swift; sourceTree = "<group>"; };
 		D7E4EBF81FB0DA300025CA67 /* Final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Final.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E4EBFB1FB0DA300025CA67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,11 +104,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		D76BE8B51FB38D8500BA4F13 /* Extension */ = {
+		D76BE8B51FB38D8500BA4F13 /* Extension&Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				D73EB2301FBA286700C50F61 /* navi_back_delegate_protocol.swift */,
 			);
-			path = Extension;
+			path = "Extension&Protocol";
 			sourceTree = "<group>";
 		};
 		D7E4EBEF1FB0DA300025CA67 = {
@@ -162,6 +167,7 @@
 				D7E4EBFD1FB0DA300025CA67 /* DashBoardViewController.swift */,
 				D7FEED4F1FB6830200F92C44 /* Setting_tableview_controller.swift */,
 				D73EB22E1FB9087C00C50F61 /* Study_view_controller.swift */,
+				D73EB2341FBA433900C50F61 /* cardListTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -190,7 +196,7 @@
 		D7E4EC311FB0DAB80025CA67 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				D76BE8B51FB38D8500BA4F13 /* Extension */,
+				D76BE8B51FB38D8500BA4F13 /* Extension&Protocol */,
 				D7E4EC301FB0DAA60025CA67 /* Service */,
 				D7E4EC2C1FB0DA460025CA67 /* Controller */,
 			);
@@ -335,7 +341,9 @@
 				D7E4EC041FB0DA300025CA67 /* Final.xcdatamodeld in Sources */,
 				D73EB22F1FB9087C00C50F61 /* Study_view_controller.swift in Sources */,
 				D73EB22C1FB8F71A00C50F61 /* Card+CoreDataClass.swift in Sources */,
+				D73EB2351FBA433900C50F61 /* cardListTableViewController.swift in Sources */,
 				D7E4EBFE1FB0DA300025CA67 /* DashBoardViewController.swift in Sources */,
+				D73EB2311FBA286700C50F61 /* navi_back_delegate_protocol.swift in Sources */,
 				D7FEED501FB6830200F92C44 /* Setting_tableview_controller.swift in Sources */,
 				D7E4EBFC1FB0DA300025CA67 /* AppDelegate.swift in Sources */,
 				D76BE8B41FB119D400BA4F13 /* record.swift in Sources */,

@@ -9,27 +9,40 @@
 import UIKit
 import CoreData
 
-class DashBoardViewController: UIViewController {
+class DashBoardViewController: UIViewController, navi_back_delegate {
     
-    @IBOutlet private weak var due_today : UILabel!
-    @IBOutlet private weak var indicator : UIActivityIndicatorView!
+    @IBOutlet weak var due_today : UILabel!
+    @IBOutlet weak var indicator : UIActivityIndicatorView!
     @IBOutlet var setting_button : UIBarButtonItem!
     @IBOutlet weak var study : UIButton!
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "dash2study" else{
-            super.prepare(for: segue, sender: sender)
-            return
+    func pushed_view_will_disappera(a_view: Setting_tableview_controller) {
+        let due_amount = CardService.shared.todays_card!
+        due_today.text = "To study today: \(due_amount) cards."
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let target = segue.destination as? Setting_tableview_controller {
+            target.delegate = self
         }
-        
-        if let target = segue.destination as? Study_view_controller {
-            let todays_words = CardService.shared.fetch_top_convenient()
-            if (todays_words.count > 0) {
-                target.all_clear = false
-                target.buffer_card = todays_words.first
-            } else {
-                target.all_clear = true
+        else if let target = segue.destination as? Study_view_controller
+        {
+            if let todays_words = CardService.shared.todays_card
+            {
+                if (todays_words > 0)
+                {
+                    target.all_clear = false
+                    target.buffer_card = CardService.shared.fetch_top_convenient()
+                }
+                else
+                {
+                    target.all_clear = true
+                }
             }
+        }
+        else {
+            super.prepare(for: segue, sender: sender)
         }
     }
     
@@ -46,7 +59,7 @@ class DashBoardViewController: UIViewController {
         DispatchQueue.global(qos: .userInitiated).async {
             _ = CardService.shared
             DispatchQueue.main.async {
-                self.due_today.text = "To study today: \(CardService.shared.fetch_top_convenient().count) cards."
+                self.due_today.text = "To study today: \(CardService.shared.todays_card!) cards."
                 self.indicator.stopAnimating()
                 self.navigationItem.rightBarButtonItem = self.setting_button
                 self.study.isHidden = false

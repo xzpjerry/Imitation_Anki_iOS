@@ -10,7 +10,11 @@ import UIKit
 
 class Setting_tableview_controller : UITableViewController {
     
-    @IBOutlet private var max_study : UILabel!
+    @IBOutlet weak var max_study : UILabel!
+    
+    weak var delegate : navi_back_delegate?
+    
+    
     var actionMap: [[(_ selectedIndexPath: IndexPath) -> Void]] {
         return [
             // Alert style alerts.
@@ -25,7 +29,12 @@ class Setting_tableview_controller : UITableViewController {
         super.viewDidLoad()
         update_label()
     }
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let delegate = self.delegate {
+            delegate.pushed_view_will_disappera(a_view: self)
+        }
+    }
     
     // update label
     func update_label() {
@@ -34,8 +43,8 @@ class Setting_tableview_controller : UITableViewController {
     
     /// Show a text entry alert with two custom buttons.
     func showTextEntryAlert(_: IndexPath) {
-        let title = NSLocalizedString("A Short Title is Best", comment: "")
-        let message = NSLocalizedString("A message should be a short, complete sentence.", comment: "")
+        let title = NSLocalizedString("Maximum card per day", comment: "")
+        let message = NSLocalizedString("The more is not always the better.", comment: "")
         let cancelButtonTitle = NSLocalizedString("Cancel", comment: "")
         let otherButtonTitle = NSLocalizedString("OK", comment: "")
         

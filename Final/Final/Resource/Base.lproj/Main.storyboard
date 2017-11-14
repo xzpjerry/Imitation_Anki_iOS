@@ -10,6 +10,77 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Card List Table View Controller-->
+        <scene sceneID="Ivw-sW-37A">
+            <objects>
+                <tableViewController id="DuM-g7-1nW" customClass="cardListTableViewController" customModule="Final" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wC2-bJ-NwE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="m6L-xm-WYu" userLabel="Loading_indicator_view">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="p8b-03-P7r">
+                                    <rect key="frame" x="106" y="3.5" width="37" height="37"/>
+                                    <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </activityIndicatorView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyq-gA-aOn">
+                                    <rect key="frame" x="150" y="12" width="75" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="lyq-gA-aOn" firstAttribute="centerY" secondItem="m6L-xm-WYu" secondAttribute="centerY" id="A0e-lx-fkl"/>
+                                <constraint firstItem="lyq-gA-aOn" firstAttribute="leading" secondItem="p8b-03-P7r" secondAttribute="trailing" constant="7" id="D9N-Lh-obr"/>
+                                <constraint firstItem="lyq-gA-aOn" firstAttribute="centerX" secondItem="m6L-xm-WYu" secondAttribute="centerX" id="GaR-R6-gL5"/>
+                                <constraint firstItem="p8b-03-P7r" firstAttribute="centerY" secondItem="m6L-xm-WYu" secondAttribute="centerY" id="qX0-zA-You"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="card_cell" textLabel="a0o-H0-H1t" detailTextLabel="RgB-BD-r1M" style="IBUITableViewCellStyleSubtitle" id="XQt-Vu-T6V">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XQt-Vu-T6V" id="RKz-6O-aoG">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a0o-H0-H1t">
+                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RgB-BD-r1M">
+                                            <rect key="frame" x="16" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="DuM-g7-1nW" id="W2Z-dC-OR7"/>
+                            <outlet property="delegate" destination="DuM-g7-1nW" id="ibX-zn-nuJ"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="loading_view" destination="m6L-xm-WYu" id="al1-Sd-Jb8"/>
+                        <outlet property="spinner" destination="p8b-03-P7r" id="5dY-pE-hiS"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Bu-na-Ld2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="457" y="-617"/>
+        </scene>
         <!--Dashboard-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -21,7 +92,7 @@
                             <view contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="347" placeholderIntrinsicHeight="128" translatesAutoresizingMaskIntoConstraints="NO" id="39E-mH-fhT">
                                 <rect key="frame" x="14" y="78" width="347" height="128"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" text="First time loading, this typically takes 15 seconds." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dwc-Pa-sLH">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" text="First time loading, this typically takes 20 seconds." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dwc-Pa-sLH">
                                         <rect key="frame" x="0.0" y="0.0" width="347" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -64,6 +135,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Dashboard" id="4KP-jr-oEI">
+                        <barButtonItem key="leftBarButtonItem" title="Cards" id="VLB-Vy-e0o">
+                            <connections>
+                                <segue destination="DuM-g7-1nW" kind="show" identifier="dash2cardlist" id="0TE-ba-L3m"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Setting" id="kKa-Dx-J3G">
                             <connections>
                                 <segue destination="c8D-hV-1AK" kind="show" identifier="dash2setting" id="myr-wx-6jI"/>

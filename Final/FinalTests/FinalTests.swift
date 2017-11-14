@@ -15,13 +15,10 @@ class FinalTests: XCTestCase {
     func test_didLoad() {
         let instance = CardService.shared
         let sample_record = record("abandon", "")
-        let results1 = instance.find_convenient(sample_record)
-        XCTAssert(results1.first?.word == "abandon", "Find_convenient failed.")
-        let result2 = instance.find(sample_record)
-        XCTAssert(result2.fetchedObjects?.first?.word == "abandon", "Find failed.")
-        
+        let results1 = instance.find_convenient(sample_record)!
+        XCTAssert(results1.word == "abandon", "Find_convenient failed.")
     }
-    
+    /*
     func test_add() {
         let instance = CardService.shared
         let sample_record = record("a_new_card", "just for test purpose")
@@ -62,5 +59,5 @@ class FinalTests: XCTestCase {
         let result = instance.fetch_top_convenient()
         XCTAssert(result.count == UserDefaults.standard.integer(forKey: "max_study"), "Fetch top failed.")
     }
-    
+    */
 }

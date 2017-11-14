@@ -11,6 +11,7 @@ import UIKit
 class Study_view_controller : UIViewController{
     var all_clear : Bool!
     var buffer_card : record!
+    
     @IBOutlet weak var good : UIButton!
     @IBOutlet weak var hard : UIButton!
     @IBOutlet weak var bad : UIButton!
@@ -35,7 +36,7 @@ class Study_view_controller : UIViewController{
             return
         }
         
-        let current_card = buffer_card
+        var current_card = buffer_card
         switch button {
         case good:
             NSLog("good")
@@ -54,11 +55,13 @@ class Study_view_controller : UIViewController{
             NSLog("THis line should never excute")
         }
         CardService.shared.modify(a_record: buffer_card, with: current_card!)
-        let todays_cards = CardService.shared.fetch_top_convenient()
-        if todays_cards.count > 0 {
-            // assign new card
-        } else {
-            // hide buttons and give info "All clear"
+        if let todays_cards = CardService.shared.todays_card {
+            if todays_cards > 0 {
+                // assign new card
+            } else {
+                // hide buttons and give info "All clear"
+            }
         }
+        
     }
 }
