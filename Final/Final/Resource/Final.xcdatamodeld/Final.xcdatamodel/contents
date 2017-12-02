@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13533" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Card" representedClassName="Card" syncable="YES" codeGenerationType="category">
+        <attribute name="badge" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="created_time" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="due" attributeType="Date" defaultDateTimeInterval="1038783540" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="ease" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="first_letter" attributeType="String" syncable="YES"/>
+        <attribute name="interval" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="learning_stage" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="stage" attributeType="String" syncable="YES"/>
+        <attribute name="success_study_times" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="title" attributeType="String" syncable="YES"/>
+        <attribute name="total_study_times" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="unique" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="note" maxCount="1" deletionRule="Cascade" destinationEntity="Note" inverseName="card" inverseEntity="Note" syncable="YES"/>
+        <fetchIndex name="byPropertyIndex">
+            <fetchIndexElement property="due" type="Binary" order="ascending"/>
+            <fetchIndexElement property="first_letter" type="Binary" order="ascending"/>
+            <fetchIndexElement property="created_time" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="Note" representedClassName="Note" syncable="YES" codeGenerationType="category">
+        <attribute name="content" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="unique" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="card" maxCount="1" deletionRule="Nullify" destinationEntity="Card" inverseName="note" inverseEntity="Card" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Card" positionX="-344" positionY="-36" width="128" height="240"/>
+        <element name="Note" positionX="-20" positionY="38" width="128" height="90"/>
+    </elements>
+</model>
