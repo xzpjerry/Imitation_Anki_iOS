@@ -51,7 +51,7 @@ class StudyCardService {
             let steps = UserDefaults.standard.object(forKey: "study_steps") as! Array<Int>
             let final_steps = steps.count - 1
             var next_step = Int(card.learning_stage)
-            guard level != .easy else {
+            guard level != .easy && final_steps != 0 else {
                 return Double(steps.last!)
             }
             if next_step > final_steps {
@@ -94,7 +94,7 @@ class StudyCardService {
             card.total_study_times = card.total_study_times + 1
             card.interval = get_interval(card: card, level: level)
             
-            if (Int(card.learning_stage) != ((UserDefaults.standard.object(forKey: "study_steps") as! Array<Int>).count-1) && level != .easy) {
+            if (Int(card.learning_stage) != ((UserDefaults.standard.object(forKey: "study_steps") as! Array<Int>).count-1)) {
                 card.learning_stage = card.learning_stage + 1
                 card.due = Calendar.current.date(byAdding: .minute, value: Int(card.interval), to: Date())
             }
@@ -104,6 +104,10 @@ class StudyCardService {
                 if card.stage == "Learning" {
                     card.stage = "Learned"
                     card.ease = 1000 // unit that measures user's command on this card, init at 1000
+                    
+                    let learned = UserDefaults.standard.integer(forKey: "learned_today")
+                    UserDefaults.standard.set(learned + 1, forKey: "learned_today")
+                    
                 } else {
                     let m = UserDefaults.standard.double(forKey: "Interval_deduction_after_failure")
                     card.interval *= m
@@ -125,6 +129,9 @@ class StudyCardService {
             learn_new_or_relearn(card, level)
             return
         }
+        
+        let learned = UserDefaults.standard.integer(forKey: "learned_today")
+        UserDefaults.standard.set(learned + 1, forKey: "learned_today")
         
         switch level {
         case .hard:

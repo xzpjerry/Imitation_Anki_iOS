@@ -26,6 +26,9 @@
 		4F43CBE91FC0BA700009D3C7 /* CardCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F43CBE81FC0BA700009D3C7 /* CardCollectionViewController.swift */; };
 		4FC9AC951FD21A0D00C305E0 /* GREwords.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FC9AC941FD21A0D00C305E0 /* GREwords.plist */; };
 		4FC9AC971FD21DE900C305E0 /* DeckChangeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC9AC961FD21DE900C305E0 /* DeckChangeTableViewController.swift */; };
+		4FFF4E4B1FD787C90044DEB0 /* Audio+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFF4E491FD787C90044DEB0 /* Audio+CoreDataClass.swift */; };
+		4FFF4E4E1FD788C60044DEB0 /* AudioCheckerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFF4E4D1FD788C60044DEB0 /* AudioCheckerViewController.swift */; };
+		4FFF4E501FD788DB0044DEB0 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFF4E4F1FD788DB0044DEB0 /* AudioService.swift */; };
 		68215D171430A8385B1F6FF7 /* Pods_FinalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF478BC14E452546519ADEE5 /* Pods_FinalTests.framework */; };
 		A4EB1730462F0A18BDF1EA93 /* Pods_Final.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B1302C6533BEA85618CC5FD /* Pods_Final.framework */; };
 		D1A1D1A5EB0C269A5F0F3674 /* Pods_FinalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 543DEDAE41E80D9D72AD87F5 /* Pods_FinalUITests.framework */; };
@@ -82,6 +85,9 @@
 		4F43CBE81FC0BA700009D3C7 /* CardCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewController.swift; sourceTree = "<group>"; };
 		4FC9AC941FD21A0D00C305E0 /* GREwords.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GREwords.plist; sourceTree = "<group>"; };
 		4FC9AC961FD21DE900C305E0 /* DeckChangeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckChangeTableViewController.swift; sourceTree = "<group>"; };
+		4FFF4E491FD787C90044DEB0 /* Audio+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Audio+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4FFF4E4D1FD788C60044DEB0 /* AudioCheckerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCheckerViewController.swift; sourceTree = "<group>"; };
+		4FFF4E4F1FD788DB0044DEB0 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
 		543DEDAE41E80D9D72AD87F5 /* Pods_FinalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		844D6B8CA36081FD53B5E67B /* Pods-Final.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final.release.xcconfig"; path = "Pods/Target Support Files/Pods-Final/Pods-Final.release.xcconfig"; sourceTree = "<group>"; };
 		AF478BC14E452546519ADEE5 /* Pods_FinalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +188,7 @@
 		4F1159021FC09836008C86A9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4FFF4E491FD787C90044DEB0 /* Audio+CoreDataClass.swift */,
 				4F2AFF921FC9F75B004B6C55 /* Note+CoreDataClass.swift */,
 				4F2AFF941FC9F75B004B6C55 /* Card+CoreDataClass.swift */,
 				4F11591D1FC0AC5F008C86A9 /* CardData.swift */,
@@ -211,6 +218,7 @@
 				4F080BA91FC10743001B8816 /* CardEditTableViewController.swift */,
 				D7783D991FC246FA003438F9 /* NoteEditViewController.swift */,
 				4FC9AC961FD21DE900C305E0 /* DeckChangeTableViewController.swift */,
+				4FFF4E4D1FD788C60044DEB0 /* AudioCheckerViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -220,6 +228,7 @@
 			children = (
 				4F1159071FC0A6D8008C86A9 /* CardService.swift */,
 				D7783D9B1FC358E7003438F9 /* StudyCardService.swift */,
+				4FFF4E4F1FD788DB0044DEB0 /* AudioService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -555,8 +564,11 @@
 				4F080BAA1FC10743001B8816 /* CardEditTableViewController.swift in Sources */,
 				4F2AFF981FC9F75B004B6C55 /* Card+CoreDataClass.swift in Sources */,
 				4FC9AC971FD21DE900C305E0 /* DeckChangeTableViewController.swift in Sources */,
+				4FFF4E4B1FD787C90044DEB0 /* Audio+CoreDataClass.swift in Sources */,
 				4F2AFF961FC9F75B004B6C55 /* Note+CoreDataClass.swift in Sources */,
+				4FFF4E501FD788DB0044DEB0 /* AudioService.swift in Sources */,
 				4F43CBE91FC0BA700009D3C7 /* CardCollectionViewController.swift in Sources */,
+				4FFF4E4E1FD788C60044DEB0 /* AudioCheckerViewController.swift in Sources */,
 				4F1159211FC0AE63008C86A9 /* CardCollectionViewCell.swift in Sources */,
 				D7783D9A1FC246FA003438F9 /* NoteEditViewController.swift in Sources */,
 				4F080BB41FC13DA9001B8816 /* titleTableViewCell.swift in Sources */,

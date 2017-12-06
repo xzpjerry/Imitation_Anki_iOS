@@ -12,6 +12,7 @@ import CoreData
 class NoteEditViewController: UIViewController {
     
     @IBOutlet weak var note_text_view : UITextView!
+    @IBOutlet weak var placeholder_label : UILabel!
     
     var selected_card : Card!
     var its_note : Note!
@@ -23,11 +24,21 @@ class NoteEditViewController: UIViewController {
         self.navigationController?.present(self.picker, animated: true, completion: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "audiochecker" else {
+            super.prepare(for: segue, sender: sender)
+            return
+        }
+        let dst = segue.destination as! AudioCheckerViewController
+        dst.mycard = selected_card
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         its_note = selected_card.note!
         txtBody = its_note.content as! NSAttributedString
         note_text_view.attributedText = txtBody
+        placeholder_label.isHidden = txtBody.length == 0 ? false : true
     }
     
     
@@ -48,6 +59,7 @@ class NoteEditViewController: UIViewController {
         }
     }
     
+    // adjust keyboard when scrolling
     @objc
     func updateTextView(notification : Notification)
     {
@@ -101,5 +113,7 @@ extension NoteEditViewController : UIImagePickerControllerDelegate, UINavigation
 }
 
 extension NoteEditViewController : UITextViewDelegate {
-    
+    func textViewDidChange(_ textView: UITextView) {
+        placeholder_label.isHidden = true
+    }
 }

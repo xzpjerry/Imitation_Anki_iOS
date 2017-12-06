@@ -35,13 +35,26 @@ class DashBoardViewController: UIViewController {
     }
     
     private func set_default_setting() {
+        let start_of_today = Calendar.current.startOfDay(for: Date())
+        
         if UserDefaults.standard.bool(forKey: "Not_First_time_running") == false {
             UserDefaults.standard.set(true, forKey: "Not_First_time_running")
             UserDefaults.standard.set(50, forKey: "max_study")
             UserDefaults.standard.set(30, forKey: "learn_ahead")
             UserDefaults.standard.set(0.6, forKey: "Interval_deduction_after_failure")
             UserDefaults.standard.set([1, 10, 1440], forKey: "study_steps")
+            UserDefaults.standard.set(0, forKey: "learned_today")
+            UserDefaults.standard.set(start_of_today, forKey: "Last_day")
         }
+        
+        // new day
+        let start_of_yesterday = UserDefaults.standard.object(forKey: "Last_day") as! Date
+        if start_of_today != start_of_yesterday {
+            UserDefaults.standard.set(0, forKey: "learned_today")
+            UserDefaults.standard.set(start_of_today, forKey: "Last_day")
+        }
+        NSLog("Learned: \(UserDefaults.standard.integer(forKey: "learned_today"))")
+    
     }
 }
 

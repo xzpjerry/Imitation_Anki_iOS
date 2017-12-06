@@ -24,6 +24,11 @@ class CardService {
         let allowed_foreseen_period = UserDefaults.standard.integer(forKey: "allowed_foreseen_period")
         return Calendar.current.date(byAdding: .minute, value: allowed_foreseen_period, to: now)!
     }
+    var remaing_today : Int {
+        let learned = UserDefaults.standard.integer(forKey: "learned_today")
+        let max = UserDefaults.standard.integer(forKey: "max_study")
+        return (max - learned) < 0 ? 0 : (max - learned)
+    }
     
     // Dashboard value
     var total_amount : Int {
@@ -40,25 +45,28 @@ class CardService {
         request.predicate = NSPredicate(format: "stage = 'Learned'")
         return try! CardService.context.count(for: request)
     }
+    
     var new_totday_amount : Int {
         let request : NSFetchRequest<Card> = NSFetchRequest(entityName: "Card")
-        request.fetchLimit = UserDefaults.standard.integer(forKey: "max_study")
+        request.fetchLimit = CardService.shared.remaing_today
         request.predicate = NSPredicate(format: "stage = 'Unseen'")
         return try! CardService.context.count(for: request)
     }
     var review_totday_amount : Int {
         let request : NSFetchRequest<Card> = NSFetchRequest(entityName: "Card")
+        request.fetchLimit = CardService.shared.remaing_today
         request.predicate = NSPredicate(format: "due <= %@ AND stage = 'Reviewing'", argumentArray: [CardService.endoftoday])
         return try! CardService.context.count(for: request)
     }
     var relearn_totday_amount : Int {
         let request : NSFetchRequest<Card> = NSFetchRequest(entityName: "Card")
+        request.fetchLimit = CardService.shared.remaing_today
         request.predicate = NSPredicate(format: "due <= %@ AND stage = 'Relearning'", argumentArray: [CardService.endoftoday])
         return try! CardService.context.count(for: request)
     }
     var available_now_amount : Int {
         let request : NSFetchRequest<Card> = NSFetchRequest(entityName: "Card")
-        //request.fetchLimit = UserDefaults.standard.integer(forKey: "max_study")
+        request.fetchLimit = CardService.shared.remaing_today
         request.predicate = NSPredicate(format: "due <= %@ OR stage = 'Unseen'", argumentArray: [CardService.allowed_foreseen_end_point])
         return try! CardService.context.count(for: request)
     }
