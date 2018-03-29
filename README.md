@@ -1,6 +1,6 @@
 # Imitation_Anki_iOS
 My first iOS app -- an imitation of Anki flashcard.
-You can easily create flash cards with it, and it will arrange a perfect review time for you, usign a spaced repetition algorithm.
+You can easily create flash cards with it, and it will arrange a perfect review time for you, using a spaced repetition algorithm.
 
 # Technologies used:
 
